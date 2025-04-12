@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    background-color: black;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .video-section {
+    width: 30%;
+  }
+  
+  .video-section video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .stopwatch-section {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .stopwatch {
+    text-align: center;
+    color: #00ffe7;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px #00ffe7;
+  }
+  
+  h1#display {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  
+  .controls button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+  }
+  
+  .controls button:hover {
+    background-color: #f50057;
+  }
+  
+  #laps {
+    list-style: none;
+    margin-top: 20px;
+    max-height: 150px;
+    overflow-y: auto;
+    color: white;
+  }
+  
+  .rhombus-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  .rhombus-container::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      repeating-linear-gradient(45deg, rgba(255, 105, 180, 0.5) 0 2px, transparent 2px 20px),
+      repeating-linear-gradient(-45deg, rgba(255, 105, 180, 0.5) 0 2px, transparent 2px 20px);
+    mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, transparent 70%);
+    animation: sparkle 5s linear infinite;
+  }
+  
+  @keyframes sparkle {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(20px, 20px);
+    }
+  }
+  
